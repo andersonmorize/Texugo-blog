@@ -1,0 +1,34 @@
+.bowlby {
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 2em;
+}
+
+.tags a {
+    background-color: #3490dc;
+    border-radius: 10px;
+    color: #fff;
+    padding: 0 5px;
+    text-decoration: none;
+}
+
+.tags a:hover {
+    background-color: #2074ba;
+}
+
+.post h2 {
+    color: #3490dc;
+    font-family: 'Alatsi', sans-serif;
+}
+
+.post h2 a {
+    text-decoration: none;
+}
+
+.post h2:hover {
+    color: #2074ba;
+}
+
+.post p {
+    font-size: 1.2em;
+    text-indent: 2em;
+}
