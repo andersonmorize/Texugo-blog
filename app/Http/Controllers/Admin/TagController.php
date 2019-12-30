@@ -50,7 +50,7 @@ class TagController extends Controller
         }
         catch( Exception $e)
         {
-            flash('Erro ao tentar criar tag' . $e->error_log . "<br>Código " . $e->error_reporting)->error();
+            flash('Erro ao tentar criar tag<br>' . $e->getMessage())->error();
         }
         return redirect()->route('tag.index');
     }
@@ -97,7 +97,7 @@ class TagController extends Controller
         }
         catch( Exception $e)
         {
-            flash('Error ao tentar editar tag')->error();
+            flash('Error ao tentar editar tag<br>' . $e->getMessage())->error();
         }
         return redirect()->route('tag.index');
     }
@@ -120,7 +120,7 @@ class TagController extends Controller
         }
         catch(Exception $e)
         {
-            flash('Error ao tentar deletar tag')->error();
+            flash('Error ao tentar deletar tag<br>' . $e->getMessage())->error();
         }
 
         return redirect()->route('tag.index');

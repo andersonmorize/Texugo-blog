@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserUpdateRequest;
-use Illuminate\Http\Request;
 use App\User;
 use Exception;
-use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
