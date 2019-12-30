@@ -4,29 +4,30 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-md-10 post">
-                <!--
-                <figure class="text-center">
-                    <img class="rounded img-fluid" src="{{ asset('/images/poder-da-comunicacao.png') }}" alt="Comunicação é poder">
-                    <figcaption><a href="https://blog.runrun.it/poder-de-persuasao/">fonte</a></figcaption>
-                </figure>
-                -->
                 <iframe width="100%" height="400" src="https://www.youtube.com/embed/Kqud3JLs3iQ?autoplay=1" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <h2 class="text-center">Oi meu chapa</h2>
                 <div class="mx-5">
-                    <p class="text-justify">Texugo é meu pseudônimo, surgiu junto com meu ingresso na programação,
-                        e achei justo que esse blog recebesse este nome.
+                    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id condimentum augue,
+                         sit amet congue arcu. Nam id orci non mi placerat faucibus. Curabitur vestibulum ultrices bibendum.
+                          Fusce quis viverra metus, pretium feugiat velit. Duis iaculis vestibulum neque in hendrerit. Morbi
+                           lacinia sapien vel ultricies sagittis. Morbi iaculis leo at cursus accumsan. Duis ornare elit sed
+                            ipsum commodo ornare. Donec cursus quis sapien quis mattis.
                     </p>
-                    <p class="text-justify">O texugo.com foi publicado como demostração de poder e de transferencia do mesmo. Afinal
-                        de contas, é mais simples encontrar um site no meio de quase <a href="https://www.internetlivestats.com/" target="_blank">
-                        2 bilhões</a>, do que uma pessoa entre quase <a href="https://www.worldometers.info/br/" target="_blank">8 bilhões</a>
-                        Abordando temas centrado na programação com enfoque no desenvolvimento de websites, procuro transmitir
-                        conhecimento gratuito e adquirir mais experiencia no decorrer dessa jornada.
+                    <p class="text-justify">Ut ultricies laoreet tortor vel malesuada. Mauris at vehicula odio, in vehicula nisi.
+                         Ut ac posuere sem, quis rhoncus nunc. Nunc consectetur posuere egestas. Proin laoreet tincidunt orci,
+                          ut fermentum dui pellentesque commodo. Nunc justo massa, interdum at cursus a, pretium eget tellus.
+                           Nunc in mauris nibh. Fusce nec quam pellentesque, sodales risus vitae, posuere magna. Nunc hendrerit,
+                            ante non elementum varius, turpis neque aliquam sapien, eget elementum libero enim sed velit. Etiam
+                             fringilla felis risus, nec luctus neque eleifend vitae. Cras ut suscipit felis, eu pretium sem.
+                              Quisque gravida odio augue, sed tincidunt leo vulputate venenatis. Praesent elementum ipsum non
+                               elit tristique, in mattis tellus pharetra. Maecenas feugiat justo dolor, et volutpat orci ultrices
+                                eget. Phasellus ut dolor vulputate, pretium nisi nec, mollis odio.
                     </p>
-                    <p class="text-justify">Erguido em php e com diversas ferramentas desenvolvidas com essa linguagem como padrão.
-                        Texugo.com furgiu com a finalidade de ser um portal de informação aqui na internet, que contribuirá para o
-                        crescimento da mesma, disceminando conteudo com base no meio virtual. <small class="text-muted">E pra ver se o Texugo consegue
-                        mais trabalhos. hahaha!!!</small>
+                    <p class="text-justify">Pellentesque condimentum consectetur aliquam. Phasellus commodo efficitur
+                         est, in semper augue maximus at. Mauris et nisl arcu. Mauris odio dolor, porta eu pulvinar
+                          quis, pulvinar sed odio. Phasellus at porta leo. Vivamus eleifend varius quam molestie semper.
+                           Phasellus sit amet porttitor diam.</small>
                     </p>
                 </div>
             </div>

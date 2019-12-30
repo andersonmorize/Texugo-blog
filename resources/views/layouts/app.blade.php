@@ -30,7 +30,7 @@
                 <div class="container">
                     <a class="navbar-brand bowlby" href="{{ url('/') }}">
                         <img src="{{ asset('images/texugo-100.png') }}" width="40" height="40" alt="">
-                        {{ config('app.name', 'Laravel') }} <span class="text-muted h6">.com</span>
+                        {{ config('app.name', 'Laravel') }} <span class="text-muted h6">.net</span>
                     </a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -56,7 +56,7 @@
                                 </li>
                                 @if (Route::has('register'))
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Cadastrar') }}</a>
                                     </li>
                                 @endif
                             @else

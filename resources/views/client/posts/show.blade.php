@@ -10,11 +10,11 @@
         <div class="col-lg-8">
 
             <!-- Title -->
-            <h1 class="mt-4">{{ $post->title }}</h1>
+            <h1 class="mt-4 text-primary">{{ $post->title }}</h1>
 
             <!-- Author -->
             <p class="lead">
-            by
+            Por
             <a href="#">{{ $post->user->name }}</a>
             </p>
 
@@ -31,8 +31,9 @@
             <hr>
 
             <!-- Post Content -->
-            {!! $post->body !!}
-
+            <div class="text-justify post">
+                {!! $post->body !!}
+            </div>
             <hr>
         </div>
         <!-- Sidebar Widgets Column -->
@@ -68,9 +69,9 @@
             </div>
             <!-- Side Widget -->
             <div class="card my-4">
-                <h5 class="card-header bg-dark text-white">Side Widget</h5>
+                <h5 class="card-header bg-dark text-white">Sobre</h5>
                 <div class="card-body">
-                    You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                    Integer a nulla lorem. Etiam id nulla in purus efficitur consequat. Donec aliquet pellentesque lectus quis elementum. Curabitur vitae leo sit amet nunc posuere hendrerit. Maecenas placerat ipsum at erat pretium cursus. Morbi ornare odio eget pulvinar fermentum. Morbi dolor sem, faucibus vestibulum viverra blandit, accumsan a mauris.
                 </div>
             </div>
         </div>
