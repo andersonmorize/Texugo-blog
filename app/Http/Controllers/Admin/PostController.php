@@ -74,7 +74,7 @@ class PostController extends Controller
         }
         catch (Exception $e)
         {
-            flash('Erro ao tentar criar post')->error();
+            flash('Erro ao tentar criar post<br>' . $e->getMessage())->error();
         }
         return redirect()->route('post.index');
     }
@@ -114,7 +114,9 @@ class PostController extends Controller
     {
         try
         {
-            //dd($request);
+            // mensagem de retorno
+            $message = 'Post atualizado com sucesso';
+
             $postData = $request->all();
             $request->validated();
             $post = Post::find($id);
@@ -124,22 +126,31 @@ class PostController extends Controller
             $post->tags()->sync($postData['tags']);
 
             // anexo de fotos
-            foreach ($request->file('photos') as $photo)
+            if ($request->hasFile('photos') && $request->file('photo')->isValid())
             {
-                $newName = $photo->getClientOriginalName();
-                $photo->move(public_path('images'), $newName);
+                foreach ($request->file('photos') as $photo)
+                {
+                    $newName = $photo->getClientOriginalName();
+                    $photo->move(public_path('images'), $newName);
 
-                $post->photos()
-                    ->create([
-                    'photo' => $newName
-                ]);
+                    $post->photos()
+                        ->create([
+                        'photo' => $newName
+                    ]);
+                }
+
+                $message .= '<br> adição de imagem bem sucedida';
+            }
+            else
+            {
+                $message .= '<br> Nenhuma imagem adicionada';
             }
 
-            flash('Post atualizado com sucesso')->success();
+            flash($message)->success();
         }
         catch (Exception $e)
         {
-            flash('Erro ao tentar atualiza o post')->error();
+            flash('Erro ao tentar atualiza o post<br>' . $e->getMessage())->error();
         }
 
         return redirect()->route('post.index');
@@ -167,7 +178,7 @@ class PostController extends Controller
         }
         catch (Exception $e)
         {
-            flash('Erro ao tentar deletar o post')->error();
+            flash('Erro ao tentar deletar o post<br>' . $e->getMessage())->error();
         }
         return redirect()->route('post.index');
     }
