@@ -32,3 +32,17 @@
     font-size: 1.2em;
     text-indent: 2em;
 }
+
+html {
+    position: relative;
+    min-height: 100%;
+  }
+
+Body { margin-bottom:60px; }
+
+.footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

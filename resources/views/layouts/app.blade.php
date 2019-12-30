@@ -113,9 +113,9 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-            <div class="text-center">
-              <small>Copyright &copy; Texugo desenvolvedor</small>
+        <footer class="text-center text-white-50 footer">
+            <div class="bg-dark py-4">
+                <small>Copyright &copy; Texugo desenvolvedor</small>
             </div>
         </footer>
     </div>
