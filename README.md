@@ -36,4 +36,18 @@ De nada adiantará um conhecimento que não vai além da sua mente. Por isso ess
     
 ## Observações sobre esse projeto
 
-- Ainda apresenta uma grande limitação na referência de imagens para o post.
+- Ainda apresenta uma limitação na nomeclatura das imagens upadas.
+- Para definir o primeiro administrador do blog, é necessario alterar o atributo *is_admin* diretamente no banco de dados.
+
+## Instalação
+
+Quando o projeto foi clonado, algumas pastas essenciais para execução não foram incorporadas. Como o *.env* e o diretório *vendor*. Para executar a aplicação é necessário rodar alguns comandos.
+Já dentro do diretório clonado, execute.
+
+```composer install``` - Instala as dependências
+
+```cp .env.example .env``` - Cria o arquivo *.env*. Faça as edições no .env recém criado. Como nome do banco de dados a ser utilizado.
+
+```php artisan key:generate``` - Gera a chave do aplicativo
+
+```php artisan migrate``` - Executa as migrations
