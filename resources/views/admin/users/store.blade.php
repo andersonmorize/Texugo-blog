@@ -42,6 +42,13 @@
                 </span>
             @endif
         </div>
+        <div class="form-group">
+            <label for="admin">É administrador?</label>
+            <select name="is_admin" class="form-control" id="admin">
+                <option value="0">não</option>
+                <option value="1">sim</option>
+            </select>
+        </div>
         <input class="btn btn-success btn-lg" type="submit" value="Cadastrar">
     </form>
 </div>

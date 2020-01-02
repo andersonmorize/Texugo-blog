@@ -53,9 +53,9 @@ Route::group(['middleware' => ['auth']], function ()
             Route::get('/', 'UsersController@index')->name('admin.users.index');
             Route::get('new', 'UsersController@new')->name('admin.users.new');
             Route::post('store', 'UsersController@store')->name('admin.users.store');
-            Route::get('edit/{user}', 'UsersController@edit')->name('admin.users.edit');
-            Route::post('update/{id}', 'UsersController@update')->name('admin.users.update');
-            Route::get('delete/{id}', 'UsersController@delete')->name('admin.users.delete');
+            Route::get('{user}/edit', 'UsersController@edit')->name('admin.users.edit');
+            Route::post('{id}/update', 'UsersController@update')->name('admin.users.update');
+            Route::get('{id}/delete', 'UsersController@delete')->name('admin.users.delete');
         });
 
         Route::prefix('posts')->group(function ()

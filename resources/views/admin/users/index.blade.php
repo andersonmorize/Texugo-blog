@@ -9,7 +9,7 @@
             <tr>
                 <th>#</th>
                 <th>Nome</th>
-                <th>Criado em</th>
+                <th>Permissões</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -18,10 +18,29 @@
                 <tr>
                     <th>{{ $u->id }}</th>
                     <th>{{ $u->name }}</th>
-                    <th>{{ $u->created_at }}</th>
                     <th>
-                        <a href="{{ route('admin.users.edit', $u->id) }}" class="btn btn-primary">Editar</a>
-                        <a href="{{ route('admin.users.delete', $u->id ) }}" class="btn btn-danger">Excluir</a>
+                        @if($u->is_admin)
+                            Admin
+                        @else
+                            Cliente
+                        @endif
+                    </th>
+                    <th class="row">
+                        <a href="{{ route('admin.users.edit', $u->id) }}" class="btn btn-primary col-2 mr-2">Editar</a>
+                        <form class="form-inline col-2" action="{{route('admin.users.update', ['id' => $u->id])}}" method="POST">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <input type="hidden" name="is_admin" value="{{ !$u->is_admin }}">
+                            </div>
+                            <button type="submit" class="btn btn-info border text-white">
+                                @if($u->is_admin)
+                                    Cliente
+                                @else
+                                    Admin
+                                @endif
+                            </button>
+                        </form>
+                        <a href="{{ route('admin.users.delete', $u->id ) }}" class="btn btn-danger col-2  ml-3">Excluir</a>
                     </th>
                 </tr>
             @endforeach
