@@ -1,4 +1,4 @@
-# Texugo
+# Texugo Blog
 
 ![Captura de tela de 2019-12-29 22-44-35](https://user-images.githubusercontent.com/49793812/71594124-65c5f080-2b15-11ea-9c94-4ebb77b7b5f8.png)
 
