@@ -56,3 +56,11 @@
     </form>
 </div>
 @endsection
+
+{{-- Text Editor --}}
+<script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<script>
+    setTimeout(function(){
+        CKEDITOR.replace( 'body' );
+    }, 100);
+</script>
