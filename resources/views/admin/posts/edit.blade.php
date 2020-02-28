@@ -5,7 +5,7 @@
     <h2 class="text-dark h2 text-center">Edição de Post</h2>
     <hr>
     <form id="form-post-edit" method="POST" enctype="multipart/form-data">
-        {{ csrf_field() }}
+        @csrf
         <div class="form-group">
             <label for="title" class="h5">Título</label>
             <input id="title" class="form-control" type="text" name="title" value="{{ $post->title }}">
@@ -77,7 +77,6 @@
 <script>
 $(document).ready(function() {
     $("#btn-edit-post").click(function(e) {
-        e.preventDefault();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

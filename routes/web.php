@@ -34,8 +34,8 @@ Route::group(['middleware' => ['auth']], function ()
         {
             Route::get('/', 'UserController@index')->name('user.index');
             Route::get('edit', 'UserController@edit')->name('user.edit');
-            Route::post('update', 'UserController@update')->name('user.update');
-            Route::get('delete', 'UserController@delete')->name('user.delete');
+            Route::put('update', 'UserController@update')->name('user.update');
+            Route::delete('destroy', 'UserController@delete')->name('user.destroy');
         });
     });
 
@@ -54,8 +54,8 @@ Route::group(['middleware' => ['auth']], function ()
             Route::get('new', 'UsersController@new')->name('admin.users.new');
             Route::post('store', 'UsersController@store')->name('admin.users.store');
             Route::get('{user}/edit', 'UsersController@edit')->name('admin.users.edit');
-            Route::post('{id}/update', 'UsersController@update')->name('admin.users.update');
-            Route::get('{id}/delete', 'UsersController@delete')->name('admin.users.delete');
+            Route::put('{id}/update', 'UsersController@update')->name('admin.users.update');
+            Route::delete('{id}/destroy', 'UsersController@delete')->name('admin.users.destroy');
         });
 
         Route::prefix('posts')->group(function ()
@@ -65,7 +65,7 @@ Route::group(['middleware' => ['auth']], function ()
             Route::post('store', 'PostController@store')->name('post.store');
             Route::get('{post}/edit', 'PostController@edit')->name('post.edit');
             Route::post('{id}/update', 'PostController@update')->name('post.update');
-            Route::get('{id}/destroy', 'PostController@destroy')->name('post.destroy');
+            Route::delete('{id}/destroy', 'PostController@destroy')->name('post.destroy');
         });
 
         Route::prefix('tags')->group(function ()
@@ -74,8 +74,8 @@ Route::group(['middleware' => ['auth']], function ()
             Route::get('create', 'TagController@create')->name('tag.create');
             Route::post('store', 'TagController@store')->name('tag.store');
             Route::get('{tag}/edit', 'TagController@edit')->name('tag.edit');
-            Route::post('{id}/update', 'TagController@update')->name('tag.update');
-            Route::get('{id}/destroy', 'TagController@destroy')->name('tag.destroy');
+            Route::put('{id}/update', 'TagController@update')->name('tag.update');
+            Route::delete('{id}/destroy', 'TagController@destroy')->name('tag.destroy');
         });
 
         Route::prefix('photos')->group( function ()

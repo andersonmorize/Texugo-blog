@@ -40,7 +40,11 @@
                                 @endif
                             </button>
                         </form>
-                        <a href="{{ route('admin.users.delete', $u->id ) }}" class="btn btn-danger col-2  ml-3">Excluir</a>
+                        <form action="{{ route('admin.users.destroy', $u->id ) }}" class="col-2" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button type="input" class="btn btn-danger">Excluir</button>
+                        </form>
                     </th>
                 </tr>
             @endforeach

@@ -4,8 +4,9 @@
 <div class="container">
 <h1>Edição de usuário</h1>
 <hr>
-    <form action="{{route('user.update')}}" method="POST">
+    <form method="POST" action="{{route('user.update')}}">
         {{ csrf_field() }}
+        @method('PUT')
         <div class="form-group">
             <label>Nome do usuário</label>
             <input class="form-control @if( $errors->has('name') ) is-invalid @endif" type="text" name="name" value="{{ $user->name }}">

@@ -10,7 +10,7 @@
                 <th>#</th>
                 <th>Nome</th>
                 <th>Criado em</th>
-                <!--<th>Ações</th>-->
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -19,9 +19,13 @@
                     <th>{{ $p->id }}</th>
                     <th>{{ $p->title }}</th>
                     <th>{{ $p->created_at }}</th>
-                    <th>
-                        <a href="{{ route('post.edit', $p->id) }}" class="btn btn-primary">Editar</a>
-                        <a href="{{ route('post.destroy', $p->id ) }}" class="btn btn-danger">Excluir</a>
+                    <th class="row">
+                        <a href="{{ route('post.edit', $p->id) }}" class="btn btn-primary col-2">Editar</a>
+                        <form action="{{ route('post.destroy', $p->id ) }}" method="POST" class="col">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
                     </th>
                 </tr>
             @endforeach

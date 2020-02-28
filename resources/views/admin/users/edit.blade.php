@@ -6,6 +6,7 @@
 <hr>
     <form action="{{route('admin.users.update', ['id' => $user->id])}}" method="POST">
         {{ csrf_field() }}
+        @method("PUT")
         <div class="form-group">
             <label>Nome do usuário</label>
             <input class="form-control @if( $errors->has('name') ) is-invalid @endif" type="text" name="name" value="{{ $user->name }}">

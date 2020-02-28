@@ -73,8 +73,8 @@ class UserController extends Controller
     {
         try
         {
-            $user = User::where('id', Auth::user()->id)->get();
-            $user->delete();
+            //$user = User::where('id', Auth::user()->id)->get();
+            Auth::user()->delete();
             flash('Sua conta foi deletada com sucesso!')->success();
         }
         catch (Exception $e)
@@ -82,7 +82,7 @@ class UserController extends Controller
             flash('Desculpe<br>Error ao tentar deletar sua conta<br>' . $e->getMessage())->error();
         }
 
-        return redirect()->route('/');
+        return redirect()->route('index');
 
     }
 }

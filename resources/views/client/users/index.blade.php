@@ -9,10 +9,16 @@
                 <div class="card-body">
                     <h2 class="card-title text-center">{{ $users[0]->name }}</h2>
                     <p class="card-text text-center">{{ $users[0]->email }}</p>
-                    <div class="text-center">
-                        <a href="{{ route('user.edit', $users[0]->id) }}" class="btn btn-primary">Editar</a>
-                        <a href="{{ route('user.delete', $users[0]->id ) }}" class="btn btn-danger">Excluir</a>
-                    </div>
+
+                    <form action="{{ route('user.edit', $users[0]->id) }}" class="text-center m-1" method="GET">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                    <form action="{{ route('user.destroy') }}" class="text-center m-1" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
                 </div>
               </div>
         </div>
