@@ -76,7 +76,11 @@ class PostController extends Controller
         {
             flash('Erro ao tentar criar post<br>' . $e->getMessage())->error();
         }
-        return redirect()->route('post.index');
+
+        return response()->json([
+            'error' => false,
+            'post'  => $createPost,
+        ], 200);
     }
 
     /**

@@ -12,7 +12,7 @@
             <!-- Blog Post -->
             @foreach ($posts as $post)
                 <div class="card post mb-4">
-                    <img class="card-img-top" src="{{ asset('/images/' . $post->photos[0]->photo) }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ asset('images/' . $post->photos[0]->photo) }}" alt="Card image cap">
                     <div class="card-body">
                         <h2 class="card-title"><a href="{{ route('show', [ 'slug' => $post->slug])}}">{{ $post->title }}</a></h2>
                         <div class="text-justify">
