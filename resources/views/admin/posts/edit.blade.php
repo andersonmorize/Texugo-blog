@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <h2 class="text-dark h2 text-center">Criação de Posts</h2>
+    <h2 class="text-dark h2 text-center">Edição de Post</h2>
     <hr>
-    <form action="{{route('post.update', $post->id)}}" method="POST" enctype="multipart/form-data">
+    <form id="form-post-edit" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="title" class="h5">Título</label>
@@ -58,7 +58,51 @@
                 @endforeach
             </div>
         </div>
-        <button type="submit" class="btn btn-lg btn-primary float-right mb-4">Submeter Post</button>
+        <button id="btn-edit-post" type="button" class="btn btn-lg btn-primary float-right mb-4">Submeter Post</button>
     </form>
 </div>
 @endsection
+
+{{-- Text Editor --}}
+<script src="//cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<script>
+    // comando para recuperar o valor do CKEDITOR
+    // CKEDITOR.instances.valueOf('a').body.getData();
+    setTimeout(function(){
+        CKEDITOR.replace( 'body' );
+    }, 100);
+</script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#btn-edit-post").click(function(e) {
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var formData = new FormData($('#form-post-edit')[0]);
+        formData.append('body', CKEDITOR.instances.valueOf('a').body.getData());
+
+        $.ajax({
+            type: 'POST',
+            url: '{{ route('post.update', $post->id) }}',
+            data: formData,
+            dataType: 'json',
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                window.location = '{{ route('post.index') }}';
+            },
+            error: function(data) {
+                window.location = '{{ route('post.edit', $post) }}';
+            }
+
+        });
+    });
+});
+</script>

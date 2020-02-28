@@ -42,6 +42,8 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
+        $message = 'Post criado com sucesso';
+
         try
         {
             $postData = $request->all();
@@ -70,16 +72,17 @@ class PostController extends Controller
                 ]);
             }
 
-            flash('Post criado com sucesso')->success();
+            flash($message)->success();
         }
         catch (Exception $e)
         {
-            flash('Erro ao tentar criar post<br>' . $e->getMessage())->error();
+            $message = 'Erro ao tentar criar post<br>' . $e->getMessage();
+            flash($message)->error();
         }
 
         return response()->json([
             'error' => false,
-            'post'  => $createPost,
+            'message'  => $message,
         ], 200);
     }
 
@@ -157,7 +160,10 @@ class PostController extends Controller
             flash('Erro ao tentar atualiza o post<br>' . $e->getMessage())->error();
         }
 
-        return redirect()->route('post.index');
+        return response()->json([
+            'error' => false,
+            'message' => $message
+        ], 200);
     }
 
     /**

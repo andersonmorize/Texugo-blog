@@ -4,7 +4,7 @@
 <div class="container">
     <h2 class="text-dark h2 text-center">Criação de Posts</h2>
     <hr>
-    <form id="form-post-create" action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
+    <form id="form-post-create" method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="title" class="h5">Título</label>
@@ -68,4 +68,36 @@
 </script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="{{ asset('js/post.js')}}"></script>
+<script>
+$(document).ready(function() {
+
+    $("#btn-save-post").click(function(e) {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        var formData = new FormData($('#form-post-create')[0]);
+        formData.append('body', CKEDITOR.instances.valueOf('a').body.getData());
+        console.dir(document);
+
+        $.ajax({
+            type: 'POST',
+            url: '{{ route('post.store') }}',
+            data: formData,
+            dataType: 'json',
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                window.location = '{{ route('post.index') }}';
+            },
+            error: function(data) {
+                window.location = '{{ route('post.create') }}';
+            }
+
+        });
+    });
+});
+</script>
