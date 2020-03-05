@@ -23,7 +23,7 @@
                         <a href="{{ route('tag.edit', $t->id) }}" class="btn btn-primary col-2">Editar</a>
                         <form action="{{ route('tag.destroy', $t->id ) }}" method="POST" class="col">
                             @csrf
-                            @method("DELETE");
+                            @method("DELETE")
                             <button type="submit" class="btn btn-danger">Excluir</a>
                         </form>
                     </th>

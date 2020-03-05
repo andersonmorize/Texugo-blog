@@ -15,7 +15,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
 
     <!-- Styles -->
@@ -25,11 +25,11 @@
 <body>
     <div id="app">
         <header id="header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+            <nav class="navbar navbar-expand-md shadow navbar-light">
                 <div class="container">
-                    <a class="navbar-brand bowlby" href="{{ url('/') }}">
-                        <img src="{{ asset('images/texugo-100.png') }}" width="40" height="40" alt="">
-                        {{ config('app.name', 'Laravel') }} <span class="text-muted h6">.net</span>
+                    <a class="navbar-brand nav-title" href="{{ url('/') }}">
+                        {{-- <img src="{{ asset('images/texugo-100.png') }}" width="40" height="40" alt=""> --}}
+                        {{ config('app.name', 'Laravel') }} <!--<span class="text-muted h6">.net</span>-->
                     </a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -112,9 +112,9 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <footer class="text-center text-white-50 footer">
-            <div class="bg-dark py-4">
-                <small>Copyright &copy; Texugo desenvolvedor</small>
+        <footer class="text-center footer">
+            <div class="py-4">
+                <small class="text-muted">Copyright &copy; Texugo desenvolvedor</small>
             </div>
         </footer>
     </div>

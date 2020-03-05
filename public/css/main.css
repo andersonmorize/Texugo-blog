@@ -1,48 +1,122 @@
-.bowlby {
+:root {
+    --blue-ligth: #a2e5ff;
+    --blue: #88cbf5;
+    --blue-dark: #6eb2db;
+    --grey-light: #f4f4f4;
+    --grey: #bfbfbf;
+    --grey-dark: #9b9b9b;
+    --black: #222222;
+
+}
+
+body {
+    background-color: #fefefe;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* nav bar */
+#header nav li a {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--grey-dark);
+    font-size: 14px;
+}
+
+#header nav li a:hover {
+    color: var(--blue);
+}
+
+.nav-title {
     font-family: 'Bowlby One SC', cursive;
     font-size: 2em;
+    color: var(--grey-dark) !important;
 }
 
-.tags a {
-    background-color: #3490dc;
-    border-radius: 10px;
+.nav-title:hover {
+    color: var(--grey-dark) !important;
+}
+
+/* card */
+.card-title {
+    font-size: 40px;
+}
+
+.card-title a {
+    font-weight: 100;
+    color: var(--black);
+}
+
+.card-title a:hover {
+    color: var(--black);
+}
+
+.card-body p {
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.card-footer {
+    background-color: var(--grey-light);
+}
+
+.card-footer a {
+    color: var(--blue);
+}
+
+.card-footer a:hover {
+    color: var(--blue-dark);
+}
+
+/*
+.card-footer .tags {
+    background-color: var(--blue);
     color: #fff;
     padding: 0 5px;
-    text-decoration: none;
+    transition: .3s;
 }
 
-.tags a:hover {
-    background-color: #2074ba;
+.card-footer .tags:hover {
+    background-color: var(--blue-dark);
+    color: #fff;
+}
+*/
+/* button primary */
+.btn-primary {
+    border-width: 1px;
+    background-color: var(--blue);
+    border-color: var(--blue-ligth);
 }
 
-.post h2 {
-    color: #3490dc;
-    font-family: 'Alatsi', sans-serif;
+.btn-primary:hover {
+    background-color: var(--blue-dark);
+    border-color: var(--blue);
 }
 
-.post h2 a {
-    text-decoration: none;
+.card-header {
+    border-bottom: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.post h2:hover {
-    color: #2074ba;
+.list-link li a {
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--grey-dark);
+    font-size: 12px;
 }
 
-.post p {
-    font-size: 1.2em;
-    text-indent: 2em;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-  }
-
-Body { margin-bottom:60px; }
-
-.footer
-{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.list-link li a:hover {
+    color: var(--blue);
 }
