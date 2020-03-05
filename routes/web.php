@@ -21,8 +21,11 @@ Route::get('/presentation', function() {
 route::namespace('Client')->group(function ()
 {
     Route::get('/', 'PostController@index')->name('index');
-    Route::get('/post/{slug}', 'PostController@show')->name('show');
-    Route::get('/tag/{id}', 'PostController@tagIndex')->name('tag');
+    Route::get('/post/{slug}', 'PostController@show')
+        ->name('show');
+    Route::get('/tag/{id}', 'PostController@tagIndex')
+        ->name('tag')
+        ->where(['id' => '[0-9]+']);
     route::get('/post', 'PostController@store')->name('store');
 });
 
@@ -53,9 +56,15 @@ Route::group(['middleware' => ['auth']], function ()
             Route::get('/', 'UsersController@index')->name('admin.users.index');
             Route::get('new', 'UsersController@new')->name('admin.users.new');
             Route::post('store', 'UsersController@store')->name('admin.users.store');
-            Route::get('{user}/edit', 'UsersController@edit')->name('admin.users.edit');
-            Route::put('{id}/update', 'UsersController@update')->name('admin.users.update');
-            Route::delete('{id}/destroy', 'UsersController@delete')->name('admin.users.destroy');
+            Route::get('{user}/edit', 'UsersController@edit')
+                ->name('admin.users.edit')
+                ->where(['user' => '[0-9]+']);
+            Route::put('{id}/update', 'UsersController@update')
+                ->name('admin.users.update')
+                ->where(['id' => '[0-9]+']);
+            Route::delete('{id}/destroy', 'UsersController@delete')
+                ->name('admin.users.destroy')
+                ->where(['id' => '[0-9]+']);
         });
 
         Route::prefix('posts')->group(function ()
@@ -63,9 +72,15 @@ Route::group(['middleware' => ['auth']], function ()
             Route::get('/', 'PostController@index')->name('post.index');
             Route::get('create', 'PostController@create')->name('post.create');
             Route::post('store', 'PostController@store')->name('post.store');
-            Route::get('{post}/edit', 'PostController@edit')->name('post.edit');
-            Route::post('{id}/update', 'PostController@update')->name('post.update');
-            Route::delete('{id}/destroy', 'PostController@destroy')->name('post.destroy');
+            Route::get('{post}/edit', 'PostController@edit')
+                ->name('post.edit')
+                ->where(['post' => '[0-9]+']);
+            Route::post('{id}/update', 'PostController@update')
+                ->name('post.update')
+                ->where(['id' => '[0-9]+']);
+            Route::delete('{id}/destroy', 'PostController@destroy')
+                ->name('post.destroy')
+                ->where(['id' => '[0-9]+']);
         });
 
         Route::prefix('tags')->group(function ()
@@ -73,9 +88,15 @@ Route::group(['middleware' => ['auth']], function ()
             Route::get('/', 'TagController@index')->name('tag.index');
             Route::get('create', 'TagController@create')->name('tag.create');
             Route::post('store', 'TagController@store')->name('tag.store');
-            Route::get('{tag}/edit', 'TagController@edit')->name('tag.edit');
-            Route::put('{id}/update', 'TagController@update')->name('tag.update');
-            Route::delete('{id}/destroy', 'TagController@destroy')->name('tag.destroy');
+            Route::get('{tag}/edit', 'TagController@edit')
+                ->name('tag.edit')
+                ->where(['tag' => '[0-9]+']);
+            Route::put('{id}/update', 'TagController@update')
+                ->name('tag.update')
+                ->where(['id' => '[0-9]+']);
+            Route::delete('{id}/destroy', 'TagController@destroy')
+                ->name('tag.destroy')
+                ->where(['id' => '[0-9]+']);
         });
 
         Route::prefix('photos')->group( function ()
