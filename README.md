@@ -1,6 +1,6 @@
 # Texugo Blog
 
-![Captura de tela de 2020-03-05 01-11-49](https://user-images.githubusercontent.com/49793812/75948819-39b34c80-5e83-11ea-88f9-f57f170441df.png)
+![Captura de tela de 2020-03-05 01-55-57](https://user-images.githubusercontent.com/49793812/75949318-9a8f5480-5e84-11ea-957d-9fa897f0e881.png)
 
 ## Sobre esse projeto
 
