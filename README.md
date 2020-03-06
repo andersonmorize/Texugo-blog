@@ -1,12 +1,12 @@
 # Texugo Blog
 
-![Captura de tela de 2019-12-29 22-44-35](https://user-images.githubusercontent.com/49793812/71594124-65c5f080-2b15-11ea-9c94-4ebb77b7b5f8.png)
+![Captura de tela de 2020-03-05 01-55-57](https://user-images.githubusercontent.com/49793812/75949318-9a8f5480-5e84-11ea-957d-9fa897f0e881.png)
 
 ## Sobre esse projeto
 
 > Ensinar é aprender duas vezes. - *Joseph Joubert*
 
-Surgiu como uma bela ideia para testar os conhecimentos em Laravel, uma auto aprendizagem que posteriormente ajudará a mais
+Surgiu como uma ideia para testar os conhecimentos em Laravel, uma auto aprendizagem que posteriormente ajudará a mais
 desenvolvedores iniciantes a sanar suas dúvidas.
 
 ## Por quê?
