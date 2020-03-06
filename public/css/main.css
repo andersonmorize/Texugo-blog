@@ -16,10 +16,25 @@ body {
 
 a {
     text-decoration: none !important;
+    color: var(--blue);
+    transition: .3s;
 }
+
+a:hover {
+    color: var(--black);
+}
+
+p, label {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #6c757d !important;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    color: var(--black);
 }
 
 /* nav bar */
@@ -29,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
     color: var(--grey-dark);
     font-size: 14px;
+    transition: .3s;
 }
 
 #header nav li a:hover {
@@ -55,40 +71,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--black);
 }
 
-.card-title a:hover {
-    color: var(--black);
-}
-
-.card-body p {
-    font-size: 16px;
-    line-height: 1.75;
-}
-
 .card-footer {
     background-color: var(--grey-light);
-}
-
-.card-footer a {
-    color: var(--blue);
 }
 
 .card-footer a:hover {
     color: var(--blue-dark);
 }
 
-/*
-.card-footer .tags {
-    background-color: var(--blue);
-    color: #fff;
-    padding: 0 5px;
-    transition: .3s;
-}
-
-.card-footer .tags:hover {
-    background-color: var(--blue-dark);
-    color: #fff;
-}
-*/
 /* button primary */
 .btn-primary {
     border-width: 1px;
@@ -106,6 +96,7 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
+/* lista */
 .list-link li a {
     padding: 5px;
     border: 1px solid rgba(0, 0, 0, 0.125);
@@ -115,6 +106,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
     color: var(--grey-dark);
     font-size: 12px;
+    transition: .3s;
 }
 
 .list-link li a:hover {

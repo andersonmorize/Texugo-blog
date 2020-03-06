@@ -48,6 +48,9 @@
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('index') }}">Home</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Vídeo com play automatico" href="{{ route('presentation') }}">Apresentações</a>
                                 </li>
                                 <li class="nav-item">
