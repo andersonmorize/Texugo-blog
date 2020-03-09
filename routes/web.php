@@ -14,9 +14,9 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/presentation', function() {
-    return view('presentation');
-})->name('presentation');
+// Route::get('/presentation', function() {
+//     return view('presentation');
+// })->name('presentation');
 
 route::namespace('Client')->group(function ()
 {

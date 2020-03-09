@@ -50,9 +50,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('index') }}">Home</a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link" data-toggle="tooltip" data-placement="bottom" title="Vídeo com play automatico" href="{{ route('presentation') }}">Apresentações</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
